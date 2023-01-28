@@ -55,7 +55,7 @@ try:
             st.markdown("validate your structured data here : https://validator.schema.org/")
             st.json(faq_schema_json)
             pyperclip.copy(faq_schema_json)
-            pyperclip.paste()
+            pyperclip.waitForPaste()
             st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
     else:
         st.warning('Please select an Excel file (.xlsx) with two columns, labeled "question" and "answer" respectively.')
