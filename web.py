@@ -63,5 +63,11 @@ except KeyError:
     image = Image.open('error.jpg')
     st.image(image, caption='How the first row of your Excel file should look.')
     st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
+except ImportError:
+    st.error('Please select an Excel file (.xlsx) with two only columns, labeled "question" and "answer" respectively.')
+    image = Image.open('error.jpg')
+    st.image(image, caption='How the first row of your Excel file should look.')
+    st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
+
 
 
