@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import json
-import clipboard
 from PIL import Image
 
 def create_faq_schema(file):
@@ -53,12 +52,17 @@ try:
             faq_schema_json = create_faq_schema(file_path)
             st.success("The FAQ schema was created successfully and copied to the clipboard.", icon="✅")
             st.markdown("validate your structured data here : https://validator.schema.org/")
-            st.json(faq_schema_json)
-            clipboard.copy(faq_schema_json)
+            st.code(faq_schema_json)
     else:
         st.warning('Please select an Excel file (.xlsx) with two columns, labeled "question" and "answer" respectively.')
 except KeyError:
-    st.error('Please select an Excel file (.xlsx) with two only columns, labeled "question" and "answer" respectively.')
-    image = Image.open('faq-extractor/error.jpg')
+    st.error(
+        'Please select an Excel file (.xlsx) with two only columns, labeled "question" and "answer" respectively.')
+    image = Image.open('error.jpg')
     st.image(image, caption='How the first row of your Excel file should look.')
-
+    st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
+except ImportError:
+    st.error('Please upload an Excel (.xlsx) file with two columns labeled "question" and "answer" without a password.')
+    image = Image.open('error.jpg')
+    st.image(image, caption='How the first row of your Excel file should look.')
+    st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
