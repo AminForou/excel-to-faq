@@ -47,10 +47,10 @@ file_path = st.file_uploader("Select xlsx file:", type=["xlsx"])
 
 try:
     if file_path:
-        convert_button = st.button("Convert & Copy to Clipboard ")
+        convert_button = st.button("Convert")
         if convert_button:
             faq_schema_json = create_faq_schema(file_path)
-            st.success("The FAQ schema was created successfully and copied to the clipboard.", icon="✅")
+            st.success("The FAQ schema was created successfully", icon="✅")
             st.markdown("validate your structured data here : https://validator.schema.org/")
             st.code(faq_schema_json)
     else:
