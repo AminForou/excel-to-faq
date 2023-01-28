@@ -65,7 +65,7 @@ except KeyError:
     st.image(image, caption='How the first row of your Excel file should look.')
     st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
 except ImportError:
-    st.error('Please select an Excel file (.xlsx) with two only columns, labeled "question" and "answer" respectively.')
+    st.error('Please upload an Excel (.xlsx) file with two columns labeled "question" and "answer" without a password.')
     image = Image.open('error.jpg')
     st.image(image, caption='How the first row of your Excel file should look.')
     st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
