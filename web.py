@@ -55,11 +55,10 @@ try:
             st.markdown("validate your structured data here : https://validator.schema.org/")
             st.json(faq_schema_json)
             clipboard.copy(faq_schema_json)
-            st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
     else:
         st.warning('Please select an Excel file (.xlsx) with two columns, labeled "question" and "answer" respectively.')
 except KeyError:
     st.error('Please select an Excel file (.xlsx) with two only columns, labeled "question" and "answer" respectively.')
-    image = Image.open('error.jpg')
+    image = Image.open('faq-extractor/error.jpg')
     st.image(image, caption='How the first row of your Excel file should look.')
-    st.markdown("If you have any questions, contact me on linkedin: https://www.linkedin.com/in/ma-foroutan/ ")
+
